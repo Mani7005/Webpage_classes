@@ -254,47 +254,40 @@
 
   /* ---------- RESULTS ---------- */
   .results{padding:7rem 0; background:var(--cream);}
-  .timeline{position:relative; margin-top:1rem;}
-  .timeline::before{
-    content:''; position:absolute; left:70px; top:6px; bottom:6px; width:1px; background:var(--line);
+  .standard-grid{display:grid; grid-template-columns:1fr 1fr; gap:1.4rem;}
+  .standard-card{
+    background:var(--white); border:1px solid var(--line); border-radius:4px; padding:1.9rem 1.8rem;
   }
-  .t-item{
-    display:grid; grid-template-columns:70px 1fr; gap:2rem; position:relative; padding-bottom:2.8rem;
+  .standard-card h3{
+    font-family:var(--display); font-weight:600; font-size:1.28rem; color:var(--maroon); margin-bottom:1.1rem;
   }
-  .t-item:last-child{padding-bottom:0;}
-  .t-year{
-    font-family:var(--mono); font-weight:500; color:var(--maroon); font-size:0.95rem; padding-top:2px;
+  .score-list{display:flex; flex-direction:column; gap:0.85rem;}
+  .score-item{font-size:0.96rem; color:var(--ink-soft); line-height:1.5;}
+  .score-item .name{font-family:var(--body); font-weight:700; color:var(--ink);}
+  .score-item .school{
+    display:block; font-family:var(--mono); font-size:0.72rem; color:var(--sage);
+    text-transform:uppercase; letter-spacing:0.04em; margin-top:2px;
   }
-  .t-dot{
-    position:absolute; left:66px; top:6px; width:9px; height:9px; border-radius:50%;
-    background:var(--amber); box-shadow:0 0 0 4px var(--cream);
+  .highlight-banner{
+    margin-top:2.6rem; background:var(--maroon); color:var(--white); border-radius:6px;
+    padding:2rem 2.2rem; text-align:center;
   }
-  .t-body h3{font-family:var(--display); font-size:1.3rem; font-weight:600; margin-bottom:0.5rem;}
-  .t-body p{color:var(--ink-soft); font-size:0.98rem; max-width:520px;}
-  .t-figs{display:flex; gap:2rem; margin-top:1rem; flex-wrap:wrap;}
-  .t-figs div{font-family:var(--mono); font-size:0.78rem; color:var(--sage);}
-  .t-figs strong{display:block; font-family:var(--display); font-size:1.5rem; color:var(--ink); font-weight:600;}
-
-  .toppers{margin-top:4rem; display:grid; grid-template-columns:repeat(4,1fr); gap:1.2rem;}
-  .topper{
-    background:var(--white); border:1px solid var(--line); border-radius:4px; padding:1.6rem;
-    text-align:center;
-  }
-  .topper .pct{font-family:var(--display); font-size:1.9rem; font-weight:600; color:var(--maroon);}
-  .topper .who{font-size:0.9rem; color:var(--ink-soft); margin-top:0.3rem;}
-  .topper .what{font-family:var(--mono); font-size:0.7rem; color:var(--sage); text-transform:uppercase; margin-top:0.4rem; letter-spacing:0.04em;}
-  @media (max-width:860px){.toppers{grid-template-columns:1fr 1fr;}}
-  @media (max-width:560px){.toppers{grid-template-columns:1fr;} .timeline::before{left:52px;} .t-item{grid-template-columns:52px 1fr; gap:1.2rem;} .t-dot{left:48px;}}
+  .highlight-banner p{font-size:1rem; margin-bottom:0.5rem; color:rgba(255,253,249,0.92);}
+  .highlight-banner p:last-child{margin-bottom:0;}
+  .highlight-banner strong{color:var(--amber);}
+  @media (max-width:700px){.standard-grid{grid-template-columns:1fr;}}
 
   /* ---------- CONTACT ---------- */
   .contact{padding:7rem 0 6rem; background:var(--maroon); color:var(--white);}
-  .contact-grid{display:grid; grid-template-columns:1fr 1fr; gap:4rem;}
+  .contact-grid{display:flex; justify-content:center;}
+  .contact-inner{max-width:600px; width:100%; text-align:center;}
+  .contact-inner .eyebrow{justify-content:center;}
   .contact .eyebrow{color:var(--amber);}
   .contact .eyebrow .rule{background:var(--amber);}
   .contact h2{color:var(--white);}
-  .contact .lede{color:rgba(255,253,249,0.78);}
-  .contact-details{margin-top:2.4rem; display:flex; flex-direction:column; gap:1.5rem;}
-  .cd-row{display:flex; gap:14px; align-items:flex-start;}
+  .contact .lede{color:rgba(255,253,249,0.78); margin-left:auto; margin-right:auto;}
+  .contact-details{margin-top:2.4rem; display:flex; flex-direction:column; gap:1.5rem; align-items:center;}
+  .cd-row{display:flex; gap:14px; align-items:flex-start; text-align:left; max-width:420px; width:100%;}
   .cd-icon{
     width:36px; height:36px; border-radius:50%; background:rgba(255,253,249,0.1);
     display:flex; align-items:center; justify-content:center; flex-shrink:0; margin-top:2px;
@@ -302,34 +295,8 @@
   .cd-row div p{color:rgba(255,253,249,0.7); font-size:0.92rem;}
   .cd-row div strong{display:block; font-family:var(--body); font-weight:600; margin-bottom:2px;}
 
-  .contact-form{
-    background:var(--white); border-radius:6px; padding:2.4rem; color:var(--ink);
-  }
-  .form-row{margin-bottom:1.3rem;}
-  .form-row label{
-    display:block; font-family:var(--mono); font-size:0.72rem; text-transform:uppercase; letter-spacing:0.06em;
-    color:var(--ink-soft); margin-bottom:0.5rem;
-  }
-  .form-row input, .form-row select, .form-row textarea{
-    width:100%; border:1px solid var(--line); border-radius:3px; padding:11px 13px;
-    font-family:var(--body); font-size:0.95rem; background:var(--cream); color:var(--ink);
-    transition:border-color .25s ease;
-  }
-  .form-row input:focus, .form-row select:focus, .form-row textarea:focus{
-    outline:none; border-color:var(--amber);
-  }
-  .form-row textarea{resize:vertical; min-height:90px;}
-  .form-submit{
-    width:100%; background:var(--amber-deep); color:var(--white); border:none; padding:14px; border-radius:3px;
-    font-family:var(--body); font-weight:600; font-size:0.96rem; cursor:pointer; transition:background .25s ease;
-  }
-  .form-submit:hover{background:var(--maroon);}
-  .form-note{font-size:0.78rem; color:var(--ink-soft); margin-top:0.9rem; text-align:center;}
-
   .map-wrap{margin-top:2.4rem; border-radius:6px; overflow:hidden; border:1px solid rgba(255,253,249,0.2); filter:sepia(0.15) saturate(0.9);}
-  .map-wrap iframe{width:100%; height:220px; border:none; display:block;}
-
-  @media (max-width:860px){.contact-grid{grid-template-columns:1fr; gap:2.6rem;}}
+  .map-wrap iframe{width:100%; height:280px; border:none; display:block;}
 
   /* ---------- FOOTER ---------- */
   footer{background:#1B120C; color:rgba(255,253,249,0.6); padding:2.6rem 0;}
@@ -424,44 +391,28 @@
     <div class="section-head reveal">
       <div class="eyebrow"><span class="rule"></span>What We Teach</div>
       <h2>Subjects &amp; Batches</h2>
-      <p class="lede">Every batch is capped at 18 students. Timings are arranged around school hours, with separate morning and evening sections.</p>
+      <p class="lede">Every batch is capped at 18 students, with focused, concept-first teaching across all boards.</p>
     </div>
     <div class="subject-grid">
       <div class="subject-card reveal">
         <div class="subject-icon">M</div>
         <h3>Mathematics</h3>
-        <p>Classes 6–12, CBSE &amp; PSEB. Concept-first teaching with weekly problem sets.</p>
-        <div class="subject-meta">Mon–Sat · 60 min</div>
+        <p>All boards. Concept-first teaching with weekly problem sets.</p>
       </div>
       <div class="subject-card reveal">
         <div class="subject-icon">Sc</div>
         <h3>Science</h3>
-        <p>Physics, Chemistry &amp; Biology for Classes 6–10, with lab-style demonstrations.</p>
-        <div class="subject-meta">Mon–Sat · 60 min</div>
-      </div>
-      <div class="subject-card reveal">
-        <div class="subject-icon">En</div>
-        <h3>English</h3>
-        <p>Grammar, comprehension and writing skills, with weekly speaking practice.</p>
-        <div class="subject-meta">Tue, Thu, Sat</div>
+        <p>All boards. Physics, Chemistry &amp; Biology with lab-style demonstrations.</p>
       </div>
       <div class="subject-card reveal">
         <div class="subject-icon">SS</div>
         <h3>Social Studies</h3>
-        <p>History, Civics &amp; Geography for Classes 6–10 with map-work and timelines.</p>
-        <div class="subject-meta">Mon, Wed, Fri</div>
+        <p>All boards. History, Civics &amp; Geography with map-work and timelines.</p>
       </div>
       <div class="subject-card reveal">
-        <div class="subject-icon">PC</div>
-        <h3>Physics &amp; Chemistry</h3>
-        <p>Class 11–12 core batches for CBSE boards, aligned with school syllabi.</p>
-        <div class="subject-meta">Mon–Sat · 90 min</div>
-      </div>
-      <div class="subject-card reveal">
-        <div class="subject-icon">NJ</div>
-        <h3>NEET / JEE Foundation</h3>
-        <p>Early foundation batch for Classes 9–10 building toward competitive exams.</p>
-        <div class="subject-meta">Sun · 2 hrs</div>
+        <div class="subject-icon">En</div>
+        <h3>English</h3>
+        <p>All boards. Grammar, comprehension and writing skills, with speaking practice.</p>
       </div>
     </div>
   </div>
@@ -470,67 +421,70 @@
 <section class="results" id="results">
   <div class="wrap">
     <div class="section-head reveal">
-      <div class="eyebrow"><span class="rule"></span>Track Record</div>
-      <h2>Results Over the Years</h2>
-      <p class="lede">Board results from students who studied at Ignited Minds Tuition Centre for their final two years before exams.</p>
+      <div class="eyebrow"><span class="rule"></span>Best Performers</div>
+      <h2>Our students shine with great results.</h2>
+      <p class="lede">This year's standout scorers across every standard we teach, from schools all over Amritsar.</p>
     </div>
-    <div class="timeline">
-      <div class="t-item reveal">
-        <div class="t-year">2026</div>
-        <div class="t-dot"></div>
-        <div class="t-body">
-          <h3>Class 10 &amp; 12 Board Results</h3>
-          <p>Our strongest batch yet, with the highest number of students crossing 90% since we started.</p>
-          <div class="t-figs">
-            <div><strong>96%</strong>Pass Rate</div>
-            <div><strong>23</strong>Students above 90%</div>
-            <div><strong>4</strong>School Toppers</div>
-          </div>
+
+    <div class="standard-grid">
+      <div class="standard-card reveal">
+        <h3>9th Standard</h3>
+        <div class="score-list">
+          <div class="score-item"><span class="name">Ihit</span> — 92%<span class="school">DAV International</span></div>
+          <div class="score-item"><span class="name">Surbhi</span> — Maths 94/100 · Science 95/100 · S.S.T 92/100<span class="school">I.C.S.E. Ram Ashram</span></div>
         </div>
       </div>
-      <div class="t-item reveal">
-        <div class="t-year">2025</div>
-        <div class="t-dot"></div>
-        <div class="t-body">
-          <h3>Class 10 &amp; 12 Board Results</h3>
-          <p>Steady improvement in Science and Maths averages across both board classes.</p>
-          <div class="t-figs">
-            <div><strong>93%</strong>Pass Rate</div>
-            <div><strong>18</strong>Students above 90%</div>
-            <div><strong>2</strong>School Toppers</div>
-          </div>
+      <div class="standard-card reveal">
+        <h3>8th Standard</h3>
+        <div class="score-list">
+          <div class="score-item"><span class="name">Pragnay</span> — 93%<span class="school">Spring Dale</span></div>
+          <div class="score-item"><span class="name">Daksheesh</span> — S.S.T 93 · Punjabi 95 · English 93<span class="school">D.A.V. Public</span></div>
         </div>
       </div>
-      <div class="t-item reveal">
-        <div class="t-year">2024</div>
-        <div class="t-dot"></div>
-        <div class="t-body">
-          <h3>Class 10 &amp; 12 Board Results</h3>
-          <p>First batch of NEET foundation students moved on to full competitive-exam coaching.</p>
-          <div class="t-figs">
-            <div><strong>91%</strong>Pass Rate</div>
-            <div><strong>15</strong>Students above 90%</div>
-            <div><strong>3</strong>School Toppers</div>
-          </div>
+      <div class="standard-card reveal">
+        <h3>7th Standard</h3>
+        <div class="score-list">
+          <div class="score-item"><span class="name">Maulik</span> — 94%<span class="school">Spring Dale</span></div>
+          <div class="score-item"><span class="name">Jayna</span> — 92%<span class="school">Sacred Heart</span></div>
+          <div class="score-item"><span class="name">Mridul</span> — 88%<span class="school">Spring Dale</span></div>
+          <div class="score-item"><span class="name">Yuvika</span> — 85%<span class="school">DAV Public</span></div>
+        </div>
+      </div>
+      <div class="standard-card reveal">
+        <h3>6th Standard</h3>
+        <div class="score-list">
+          <div class="score-item"><span class="name">Avneet</span> — 95%<span class="school">I.C.S.E Harkrishan</span></div>
+        </div>
+      </div>
+      <div class="standard-card reveal">
+        <h3>5th Standard</h3>
+        <div class="score-list">
+          <div class="score-item"><span class="name">Tarandeep</span> — 95%<span class="school">D.A.V Public</span></div>
+          <div class="score-item"><span class="name">Advik</span> — 92%<span class="school">Spring Dale</span></div>
+        </div>
+      </div>
+      <div class="standard-card reveal">
+        <h3>4th Standard</h3>
+        <div class="score-list">
+          <div class="score-item"><span class="name">Samayan</span> — 95%<span class="school">Cambridge</span></div>
+          <div class="score-item"><span class="name">Myra</span> — 90%<span class="school">Excelsum</span></div>
         </div>
       </div>
     </div>
 
-    <div class="toppers">
-      <div class="topper reveal"><div class="pct">98%</div><div class="who">Simran K.</div><div class="what">Class 10 · 2026</div></div>
-      <div class="topper reveal"><div class="pct">97%</div><div class="who">Arjun S.</div><div class="what">Class 12 · 2026</div></div>
-      <div class="topper reveal"><div class="pct">96%</div><div class="who">Harleen K.</div><div class="what">Class 10 · 2025</div></div>
-      <div class="topper reveal"><div class="pct">95%</div><div class="who">Ravneet S.</div><div class="what">Class 12 · 2025</div></div>
+    <div class="highlight-banner reveal">
+      <p>Our junior <strong>Aarish</strong> from Ram Ashram scored a perfect <strong>100%</strong>.</p>
+      
     </div>
   </div>
 </section>
 
 <section class="contact" id="contact">
   <div class="wrap contact-grid">
-    <div class="reveal">
+    <div class="reveal contact-inner">
       <div class="eyebrow"><span class="rule"></span>Get In Touch</div>
       <h2>Come see a class before you enrol.</h2>
-      <p class="lede">Drop by on any weekday evening or send us your details and we'll call you back.</p>
+      <p class="lede">Drop by on any weekday evening — we'd love to show you around.</p>
       <div class="contact-details">
         <div class="cd-row">
           <div class="cd-icon">📍</div>
@@ -544,37 +498,11 @@
           <div class="cd-icon">✉️</div>
           <div><strong>Email</strong><p>pritikahanda@gmail.com</p></div>
         </div>
-        
       </div>
-    <div class="map-wrap">
+      <div class="map-wrap">
         <iframe src="https://maps.google.com/maps?cid=10031716051456264145&output=embed" loading="lazy" title="Ignited Minds Tuition Centre location map"></iframe>
       </div>
     </div>
-
-    <form class="contact-form reveal" id="contactForm">
-      <div class="form-row">
-        <label for="name">Parent / Student Name</label>
-        <input type="text" id="name" name="name" placeholder="Enter full name" required>
-      </div>
-      <div class="form-row">
-        <label for="phone">Phone Number</label>
-        <input type="tel" id="phone" name="phone" placeholder="10-digit mobile number" required>
-      </div>
-      <div class="form-row">
-        <label for="class">Class</label>
-        <select id="class" name="class" required>
-          <option value="" disabled selected>Select class</option>
-          <option>Class 6</option><option>Class 7</option><option>Class 8</option>
-          <option>Class 9</option><option>Class 10</option><option>Class 11</option><option>Class 12</option>
-        </select>
-      </div>
-      <div class="form-row">
-        <label for="message">Message (optional)</label>
-        <textarea id="message" name="message" placeholder="Tell us which subjects you're interested in"></textarea>
-      </div>
-      <button type="submit" class="form-submit">Send Message</button>
-      <p class="form-note">We'll call you back within one working day.</p>
-    </form>
   </div>
 </section>
 
@@ -592,7 +520,7 @@
       <a href="#contact">Contact</a>
     </div>
   </div>
-  <div class="footer-note">© 2026 Ignited Minds Tuition Centre, Amritsar. All content is placeholder text — replace with your own details.</div>
+  <div class="footer-note">© 2026 Ignited Minds Tuition Centre, Amritsar.</div>
 </footer>
 
 <script>
@@ -662,15 +590,6 @@
   }, { threshold: 0.15 });
   revealEls.forEach(el => io.observe(el));
 
-  // Contact form (demo only — no backend)
-  document.getElementById('contactForm').addEventListener('submit', (e) => {
-    e.preventDefault();
-    const btn = e.target.querySelector('.form-submit');
-    const original = btn.textContent;
-    btn.textContent = 'Request Sent ✓';
-    btn.disabled = true;
-    setTimeout(() => { btn.textContent = original; btn.disabled = false; e.target.reset(); }, 2400);
-  });
 </script>
 
 </body>
